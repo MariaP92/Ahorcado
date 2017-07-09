@@ -1,9 +1,9 @@
 
-
+var temp =0;
 var palabra = obtenerPalabraSecreta();
-//var arrCadenaFormada=function(){
-//Creo el array de la palabra para adivinar
+var intentos =0;
 var arr = [];
+var ahorcadoArr = [];
   
 for (var i=0; i<palabra.length; i++){
     arr.push("*");
@@ -12,7 +12,7 @@ for (var i=0; i<palabra.length; i++){
 pedirCaracteres();
 
 function pedirCaracteres(){
-    var intentos =1;
+    
      var flag ;
      alert("La palabra tiene: " + arr.join(" ") + "caracteres");
 
@@ -26,45 +26,51 @@ function pedirCaracteres(){
             ganador();
         }
         else{
-            //alert("Sigue intentando");
             intentos++;
-        }
-       
-        
-    }
-    alert("La palabra era: " + palabra.join(""));
-    if(flag == false)
-    {
-        dibujoAhorcado();
-    }
-    //for(var i=0; i<)
-
-}
-
-
-
-function compararPalabra(carac){
-     var arregloCaracterNuevo=arr;
-   //  ahorcado=dibujoAhorcado();
-    for (var i=0; i< palabra.length; i++){
-        if(carac == palabra[i]){
-            arregloCaracterNuevo[i] = carac;
-            console.log(arregloCaracterNuevo);
-            if(arregloCaracterNuevo[i] == palabra[i]){
-                alert(":) Acertaste, continua " + arregloCaracterNuevo);
-                
-            } 
             
         }
-           // console.log(ahorcado[i]);    
+ 
     }
-    
-    /*if(carac != palabra[i]){
-        for (var i=0; i<palabra.length; i++){
-             console.log(ahorcado[i]);
+    alert("La palabra era: " + palabra.join(""));
+  //  document.write("La palabra era: " + palabra.join(""));
+}
+
+function compararPalabra(carac){
+ var arregloCaracterNuevo=arr;
+ var divHTML = document.getElementById('resultado');
+
+   if(palabra.indexOf(carac) != -1){   
+       for (var i=0; i< palabra.length; i++){
+            if(carac == palabra[i]){
+                arregloCaracterNuevo[i] = carac;
+                console.log(arregloCaracterNuevo);
+               // document.write(arregloCaracterNuevo + "<br />");
+                if(arregloCaracterNuevo[i] == palabra[i]){
+                    alert(":) Acertaste, continua " + arregloCaracterNuevo);
+                    
+                } 
+                
+            } 
         }
-    }*/
-    
+    }
+    else{
+        alert("Incorrecto! Vuelve a intentarlo");
+        var ahorcado=dibujoAhorcado();
+  
+        if (temp < ahorcado.length){
+            ahorcadoArr.push(ahorcado[temp]);
+            for(var i=0 ; i<ahorcadoArr.length; i++)
+            {
+                 console.log(ahorcadoArr[i]);
+                // document.write(ahorcadoArr[i] + "<br />");
+            }
+            temp++;
+        }
+        else{
+            perdedor();
+        }
+        
+    }   
     
     if(arregloCaracterNuevo.join("") == palabra.join("")){
          return true;
@@ -72,17 +78,18 @@ function compararPalabra(carac){
     else
     {
          return false;
-
     }
-     
-    
-
 }
 
 function ganador(){
-
     alert("YOU WON :) !!!! FELICIDADES");
-    //break;
+    console.log("YOU WON :) !!!! FELICIDADES");
+}
+
+function perdedor(){
+    alert("YOU LOSE :( !!!! LO SIENTO");
+    console.log("YOU LOSE :( !!!! LO SIENTO")
+    intentos = 11;
 }
 
 function imprimirMatriz (M) {
@@ -108,19 +115,13 @@ function obtenerPalabraSecreta() {
 }
 
 function dibujoAhorcado(){
-    //array dle dibujo de ahorcado
     var hombre =  ["___\n",
                         "   |\n",
                         "   O\n",
                             "  /|\\\n",
                         "  / \\\n",
                         "___"];
-
-    //var palabra = obtenerPalabraSecreta ();
-    //console.log(palabra);
-    imprimirMatriz(hombre);
-  //return hombre;
- 
+  return hombre;
 }
 
 
