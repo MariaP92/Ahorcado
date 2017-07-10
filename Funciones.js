@@ -17,7 +17,7 @@ function numeroCapicua(numero){
     }
 
 }
-
+//document.write(numeroCapicua(565));
 
 //EJERCICIO 2
 function potencia(num, potencia){
@@ -27,6 +27,7 @@ function potencia(num, potencia){
     }
     return resultado;
 }
+//document.write(potencia(3,2));
 
 //EJERCICIO 3
 function repiteCaracter(arreglo,caracter){
@@ -43,6 +44,7 @@ function repiteCaracter(arreglo,caracter){
     }
     return numCaracter;
 }
+//document.write(repiteCaracter( ["Murcielago", "Pato", "Caballo", "Zebra"],a));
 
 //EJERCICIO 4
 function contarPalabras(palabra){
@@ -50,6 +52,7 @@ function contarPalabras(palabra){
     var numPalabras = arregloPalabras.length;
     return ("El texto ingresado tiene: " + numPalabras + " Palabras");
 }
+//document.write(contarPalabras("Life is beautiful"));
 
 //EJERCICIO 5
 function palabraLarga (arreglo){
@@ -63,6 +66,7 @@ function palabraLarga (arreglo){
     }
     return mayor;
 }
+//document.write(palabraLarga(["Murcielago", "Pato", "Caballo", "Zebra"]));
 
 //EJERCICIO 6
 function contarVocales(arreglo){
@@ -86,6 +90,7 @@ function contarVocales(arreglo){
     }
     return ("El arreglo ingresado tiene: " +  vocal + " vocales");
 }
+//document.write(contarVocales( ["Murcielago", "Pato", "Caballo", "Zebra"]));
 
 //EJERCICIO 7
 function sumaImpares(num1, num2){
@@ -98,6 +103,7 @@ function sumaImpares(num1, num2){
     return ("La suma de los numeros impares es: "+ suma);
 
 }
+//document.write(sumaImpares(1,10));
 
 //EJERCICIO 8
 function palabraMasLarga(arreglo){
@@ -114,12 +120,14 @@ function palabraMasLarga(arreglo){
     return arrLong;
 
 }
+//document.write(palabraMasLarga(["Murcielago", "Pato", "Caballo", "Zebra"]));
 
 //EJERCICIO 9
 function invertirPalabra(palabra){
   var palabraReverso = palabra.split("");
   return palabraReverso.reverse().join("");
 }
+//document.write(invertirPalabra("roma"));
 
 //EJERCICIO 10
 function dibujar(num){
@@ -149,3 +157,4 @@ function dibujarComillas(num){
   }
   return s;
 }
+//document.write(dibujar(4));
